@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="header">
+		<h1 class="logo"><a href="#"><%= bookTitle %></a></h1>
+      <ul class="main-nav">
+        <% for( let i = 0; i < nav.length; i++ ) { %>
+          <li><a href="<%= nav[i].link %> "><%= nav[i].title %> </a></li>
+        <% } %>
+      </ul>
+	</header>
+  <main>
+    <h3>Sign up</h3>
+    <form name="signUpForm" action="/auth/signUp" method="POST">
+      Username: <input name="username" id="username" />
+      Password: <input name="password" id="password" />
+      <button type="submit">Sign up</button>
+    </form>
+    <h4>Account already exists? <a href="/auth/signIn">Sign in</a> here</h4>
+  </main>
+</body>
+</html>
